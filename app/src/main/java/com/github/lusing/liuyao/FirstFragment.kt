@@ -52,24 +52,18 @@ class FirstFragment : Fragment() {
 
             val yongshen = this.yongShenId(binding.yongshen.selectedItemId.toInt())
 
-//            val yao = arrayOf(yao1, yao2, yao3, yao4, yao5, yao6)
-//
-//            val gua = Gua64(yao, rg = ri_gan.toInt())
-//
-//            val ly =
-//                LiuYao(
-//                    gua = gua,
-//                    yueJian = yue_zhi.toInt(),
-//                    riJian = ri_zhi.toInt(),
-//                    yongShen = LiuQin.FUMU
-//                )
-            //val text = ly.paiPan()
+            val yao = arrayOf(yao1, yao2, yao3, yao4, yao5, yao6)
 
-            val yao_yuanheng0029 = arrayOf(7, 7, 8, 8, 6, 8)
-            val gua_yuanheng0029 = Gua64(yao_yuanheng0029, TianGan.WU)
-            val ly_yuanheng0029 =
-                LiuYao(gua = gua_yuanheng0029, yueJian = DiZhi.ZI, riJian = DiZhi.XU, yongShen = LiuQin.GUANGUI)
-            val text = ly_yuanheng0029.paiPan()
+            val gua = Gua64(yao, rg = ri_gan.toInt())
+
+            val ly =
+                LiuYao(
+                    gua = gua,
+                    yueJian = yue_zhi.toInt(),
+                    riJian = ri_zhi.toInt(),
+                    yongShen = yongshen
+                )
+            val text = ly.paiPan()
 
             binding.textviewFirst.text = text
         };

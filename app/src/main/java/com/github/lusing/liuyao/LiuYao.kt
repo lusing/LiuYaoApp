@@ -159,8 +159,6 @@ class LiuYao {
             }
         }
 
-        //assert(shiYao == null)
-
         // 世爻为用神
         if (this.isShi) {
             println("用神持世")
