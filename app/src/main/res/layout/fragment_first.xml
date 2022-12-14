@@ -117,6 +117,13 @@
             android:entries="@array/guas"
             android:prompt="@string/pos1" />
 
+        <Spinner
+            android:id="@+id/yongshen"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:entries="@array/yongshen"
+            android:prompt="@string/yongshen" />
+
         <Button
             android:id="@+id/button_calc"
             android:layout_width="match_parent"

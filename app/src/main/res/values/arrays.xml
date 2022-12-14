@@ -32,4 +32,13 @@
         <item>戌</item>
         <item>亥</item>
     </string-array>
+    <string-array name="yongshen">
+        <item>世爻</item>
+        <item>应爻</item>
+        <item>父母爻</item>
+        <item>官鬼爻</item>
+        <item>妻财爻</item>
+        <item>子孙爻</item>
+        <item>兄弟爻</item>
+    </string-array>
 </resources>

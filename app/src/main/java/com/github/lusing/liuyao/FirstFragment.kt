@@ -50,25 +50,51 @@ class FirstFragment : Fragment() {
             val yao5 = yaoId(binding.yao5.selectedItemId)
             val yao6 = yaoId(binding.yao6.selectedItemId)
 
-            val yao = arrayOf(yao1, yao2, yao3, yao4, yao5, yao6)
+            val yongshen = this.yongShenId(binding.yongshen.selectedItemId.toInt())
 
-            val gua = Gua64(yao, rg = ri_gan.toInt())
+//            val yao = arrayOf(yao1, yao2, yao3, yao4, yao5, yao6)
+//
+//            val gua = Gua64(yao, rg = ri_gan.toInt())
+//
+//            val ly =
+//                LiuYao(
+//                    gua = gua,
+//                    yueJian = yue_zhi.toInt(),
+//                    riJian = ri_zhi.toInt(),
+//                    yongShen = LiuQin.FUMU
+//                )
+            //val text = ly.paiPan()
 
-            val ly =
-                LiuYao(gua = gua, yueJian = DiZhi.ZI, riJian = DiZhi.XU, yongShen = LiuQin.GUANGUI)
-            ly.paiPan()
+            val yao_yuanheng0029 = arrayOf(7, 7, 8, 8, 6, 8)
+            val gua_yuanheng0029 = Gua64(yao_yuanheng0029, TianGan.WU)
+            val ly_yuanheng0029 =
+                LiuYao(gua = gua_yuanheng0029, yueJian = DiZhi.ZI, riJian = DiZhi.XU, yongShen = LiuQin.GUANGUI)
+            val text = ly_yuanheng0029.paiPan()
 
-            binding.textviewFirst.text = "$yue_gan$yue_zhi 月$ri_gan$ri_zhi 日 $yao1 $yao2 $yao3"
+            binding.textviewFirst.text = text
         };
     }
 
     fun yaoId(id: Long): Int {
         return when (id) {
-            0L -> 8
-            1L -> 7
+            0L -> 7
+            1L -> 8
             2L -> 9
             3L -> 6
             else -> 0
+        }
+    }
+
+    fun yongShenId(id: Int): Int {
+        return when (id) {
+            0 -> Yao.SHI_YAO
+            1 -> Yao.YING_YAO
+            2 -> LiuQin.FUMU
+            3 -> LiuQin.GUANGUI
+            4 -> LiuQin.QICAI
+            5 -> LiuQin.ZISUN
+            6 -> LiuQin.XIONGDI
+            else -> Yao.SHI_YAO
         }
     }
 

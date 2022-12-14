@@ -13,6 +13,7 @@
     <string name="pos4">四爻</string>
     <string name="pos5">五爻</string>
     <string name="pos6">上爻</string>
+    <string name="yongshen">用神</string>
 
     <string name="month_gz">月干支</string>
     <string name="day_gz">日干支</string>

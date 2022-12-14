@@ -41,11 +41,12 @@ class LiuYao {
         }
     }
 
-    fun paiPan() : String{
+    fun paiPan(): String {
         var result = ""
         this.bianGua = benGua.getBianGua()
         println("${this.yueJian.getName()}月${this.benGua.riGan}${this.riJian.getName()}日${this.yongShen?.getName()}为用神")
-        result = "${this.yueJian.getName()}月${this.benGua.riGan}${this.riJian.getName()}日${this.yongShen?.getName()}为用神"
+        result =
+            "${this.yueJian.getName()}月${this.benGua.riGan}${this.riJian.getName()}日${this.yongShen?.getName()}为用神"
         println("旬空：${this.xunKongs}")
         print(this.benGua.getName())
         print("    ==>        ")
@@ -158,7 +159,7 @@ class LiuYao {
             }
         }
 
-        assert(shiYao == null)
+        //assert(shiYao == null)
 
         // 世爻为用神
         if (this.isShi) {
@@ -461,9 +462,9 @@ class LiuYao {
             println("爻与日建相合")
         } else if (yao.naZhi.isChong(this.riJian)) {
             //println("爻与日建相冲")
-            if(value>=0){
+            if (value >= 0) {
                 println("暗动")
-            }else{
+            } else {
                 println("日破")
             }
         }
