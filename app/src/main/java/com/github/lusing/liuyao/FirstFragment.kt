@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.github.lusing.liuyao.databinding.FragmentFirstBinding
+import com.github.lusing.qimen.TianGan
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -41,7 +42,9 @@ class FirstFragment : Fragment() {
             val yue_zhi = binding.spinnerYuezhi.selectedItem
             val ri_gan = binding.spinnerRigan.selectedItem
             val ri_zhi = binding.spinnerRizhi.selectedItem
-            binding.textviewFirst.text = "$yue_gan$yue_zhi 月$ri_gan$ri_zhi 日"
+
+            val yue_gan2 = TianGan.getTianGan(yue_gan.toString())
+            binding.textviewFirst.text = "$yue_gan$yue_zhi 月$ri_gan$ri_zhi 日 $yue_gan2"
         };
     }
 
