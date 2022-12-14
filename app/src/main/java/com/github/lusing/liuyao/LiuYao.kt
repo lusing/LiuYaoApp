@@ -41,9 +41,11 @@ class LiuYao {
         }
     }
 
-    fun paiPan() {
+    fun paiPan() : String{
+        var result = ""
         this.bianGua = benGua.getBianGua()
         println("${this.yueJian.getName()}月${this.benGua.riGan}${this.riJian.getName()}日${this.yongShen?.getName()}为用神")
+        result = "${this.yueJian.getName()}月${this.benGua.riGan}${this.riJian.getName()}日${this.yongShen?.getName()}为用神"
         println("旬空：${this.xunKongs}")
         print(this.benGua.getName())
         print("    ==>        ")
@@ -129,6 +131,7 @@ class LiuYao {
                 println("六冲")
             }
         }
+        return result
     }
 
     fun getYaoName(yao: Yao): String {

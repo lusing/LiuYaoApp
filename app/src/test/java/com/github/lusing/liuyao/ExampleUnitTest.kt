@@ -21,4 +21,9 @@ class ExampleUnitTest {
         assertEquals(10, DiZhi.getDiZhi("戌"))
         assertEquals(11, DiZhi.getDiZhi("亥"))
     }
+
+    @Test
+    fun test(){
+
+    }
 }
