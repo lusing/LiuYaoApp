@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">术数预测</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">六爻</string>
+    <string name="action_settings">设置</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">六爻</string>
-    <string name="second_fragment_label">奇门遁甲</string>
-    <string name="next">下一个</string>
-    <string name="previous">上一个</string>
+    <string name="second_fragment_label">卦详情</string>
+    <string name="next">在下一页看卦</string>
+    <string name="previous">返回上一页</string>
     <string name="calc">断卦</string>
     <string name="show">排卦</string>
     <string name="pos1">初爻</string>
@@ -21,5 +21,5 @@
     <string name="gua_xiang">卦象</string>
 
     <string name="hello_first_fragment">六爻</string>
-    <string name="hello_second_fragment">奇门遁甲</string>
+    <string name="hello_second_fragment">看卦</string>
 </resources>
