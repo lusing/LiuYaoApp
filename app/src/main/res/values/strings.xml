@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">术数预测</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">六爻</string>
+    <string name="second_fragment_label">奇门遁甲</string>
+    <string name="next">下一个</string>
+    <string name="previous">上一个</string>
+    <string name="calc">断卦</string>
+    <string name="pos1">初爻</string>
+    <string name="pos2">二爻</string>
+    <string name="pos3">三爻</string>
+    <string name="pos4">四爻</string>
+    <string name="pos5">五爻</string>
+    <string name="pos6">上爻</string>
+
+    <string name="month_gz">月干支</string>
+    <string name="day_gz">日干支</string>
+    <string name="gua_xiang">卦象</string>
+
+    <string name="hello_first_fragment">六爻</string>
+    <string name="hello_second_fragment">奇门遁甲</string>
+</resources>
