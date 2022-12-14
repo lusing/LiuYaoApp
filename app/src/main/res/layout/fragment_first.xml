@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fadeScrollbars="false"
     tools:context=".FirstFragment">
 
     <LinearLayout
@@ -69,66 +70,87 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/gua_xiang" />
-
-        <Spinner
-            android:id="@+id/yao6"
+        <LinearLayout
+            android:id="@+id/gua_list"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:entries="@array/guas"
-            android:prompt="@string/pos6" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/yao5"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:entries="@array/guas"
-            android:prompt="@string/pos5" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gua_xiang" />
 
-        <Spinner
-            android:id="@+id/yao4"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:entries="@array/guas"
-            android:prompt="@string/pos4" />
+            <Spinner
+                android:id="@+id/yongshen"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/yongshen"
+                android:prompt="@string/yongshen" />
 
-        <Spinner
-            android:id="@+id/yao3"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:entries="@array/guas"
-            android:prompt="@string/pos3" />
+            <Spinner
+                android:id="@+id/yao6"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/guas"
+                android:prompt="@string/pos6" />
 
-        <Spinner
-            android:id="@+id/yao2"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:entries="@array/guas"
-            android:prompt="@string/pos2" />
+            <Spinner
+                android:id="@+id/yao5"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/guas"
+                android:prompt="@string/pos5" />
 
-        <Spinner
-            android:id="@+id/yao1"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:entries="@array/guas"
-            android:prompt="@string/pos1" />
+            <Spinner
+                android:id="@+id/yao4"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/guas"
+                android:prompt="@string/pos4" />
 
-        <Spinner
-            android:id="@+id/yongshen"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:entries="@array/yongshen"
-            android:prompt="@string/yongshen" />
+            <Spinner
+                android:id="@+id/yao3"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/guas"
+                android:prompt="@string/pos3" />
 
-        <Button
-            android:id="@+id/button_calc"
+            <Spinner
+                android:id="@+id/yao2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/guas"
+                android:prompt="@string/pos2" />
+
+            <Spinner
+                android:id="@+id/yao1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/guas"
+                android:prompt="@string/pos1" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/calc" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/show" />
+
+            <Button
+                android:id="@+id/button_calc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/calc" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/button_first"
@@ -138,9 +160,11 @@
 
         <TextView
             android:id="@+id/textview_first"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hello_first_fragment" />
+            android:fadeScrollbars="true"
+            android:scrollbars="vertical"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

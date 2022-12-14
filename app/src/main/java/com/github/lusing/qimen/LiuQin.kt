@@ -1,8 +1,10 @@
 package com.github.lusing.qimen
 
+import com.github.lusing.liuyao.Yao
+
 
 open class LiuQin constructor(lq: Int) {
-    var liuqin = XIONGDI
+    var liuqin = Yao.SHI_YAO
 
     init {
         this.liuqin = lq
@@ -19,6 +21,10 @@ open class LiuQin constructor(lq: Int) {
             QICAI -> return "妻财"
 
             XIONGDI -> return "兄弟"
+
+            Yao.SHI_YAO -> return "世爻"
+
+            Yao.YING_YAO -> return "应爻"
         }
         return ""
     }

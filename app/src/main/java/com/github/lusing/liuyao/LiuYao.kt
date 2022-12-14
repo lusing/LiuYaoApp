@@ -15,6 +15,7 @@ class LiuYao {
     var ganZhi: GanZhi
     var xunKongs: String
     lateinit var bianGua: Gua64
+    var output = StringBuilder()
 
     constructor(gua: Gua64, yueJian: Int, riJian: Int, yongShen: Int) {
         this.benGua = gua
@@ -27,11 +28,11 @@ class LiuYao {
             this.isShi = false
             this.isYing = false
         } else if (yongShen == Yao.SHI_YAO) {
-            this.yongShen = null
+            this.yongShen = LiuQin(Yao.SHI_YAO)
             this.isShi = true
             this.isYing = false
         } else if (yongShen == Yao.YING_YAO) {
-            this.yongShen = null
+            this.yongShen = LiuQin(Yao.YING_YAO)
             this.isShi = false
             this.isYing = true
         } else {
@@ -41,68 +42,77 @@ class LiuYao {
         }
     }
 
+    fun println2(str: String) {
+        output.append(str)
+        output.append("\n")
+        println(str)
+    }
+
+    fun print2(str: String) {
+        output.append(str)
+        print(str)
+    }
+
     fun paiPan(): String {
-        var result = ""
         this.bianGua = benGua.getBianGua()
-        println("${this.yueJian.getName()}月${this.benGua.riGan}${this.riJian.getName()}日${this.yongShen?.getName()}为用神")
-        result =
-            "${this.yueJian.getName()}月${this.benGua.riGan}${this.riJian.getName()}日${this.yongShen?.getName()}为用神"
-        println("旬空：${this.xunKongs}")
-        print(this.benGua.getName())
-        print("    ==>        ")
-        println(this.bianGua.getName())
+        println2("${this.yueJian.getName()}月${this.benGua.riGan}${this.riJian.getName()}日${this.yongShen?.getName()}为用神")
+        println2("旬空：${this.xunKongs}")
+
+        print2(this.benGua.getName())
+        print2("    ==>        ")
+        println2(this.bianGua.getName())
 
         //println("宫:${benGua.gong.getName()}")
 
         for (i in 5 downTo 0) {
-            print("${benGua.yaos[i].liuShen.getName()} ")
+            print2("${benGua.yaos[i].liuShen.getName()} ")
             if (benGua.yaos[i].isYang) {
-                print("-")
+                print2("-")
             } else {
-                print("=")
+                print2("=")
             }
             if (benGua.yaos[i].isChange) {
-                print("*")
+                print2("*")
             } else {
-                print(" ")
+                print2(" ")
             }
             if (benGua.yaos[i].fuShen != null) {
-                print(benGua.yaos[i].fuShen!!.lq.getName())
-                print(benGua.yaos[i].fuShen!!.naZhi.getName())
+                print2(benGua.yaos[i].fuShen!!.lq.getName())
+                print2(benGua.yaos[i].fuShen!!.naZhi.getName())
                 val xing2 = benGua.yaos[i].fuShen!!.naZhi.xing
-                print(xing2.toString())
-                print(" ")
+                print2(xing2.toString())
+                print2(" ")
             } else {
-                print("       ")
+                print2("       ")
             }
 
-            print(benGua.yaos[i].lq.getName())
-            print(benGua.yaos[i].naZhi.getName())
+            print2(benGua.yaos[i].lq.getName())
+            print2(benGua.yaos[i].naZhi.getName())
             var xing = benGua.yaos[i].naZhi.xing
-            print(xing.toString())
+            print2(xing.toString())
             if (benGua.yaos[i].isShi) {
-                print(" 世 ")
+                print2(" 世 ")
             } else if (benGua.yaos[i].isYing) {
-                print(" 应 ")
+                print2(" 应 ")
             } else {
-                print("   ")
+                print2("   ")
             }
 
             if (this.bianGua.yaos[i].isYang) {
-                print("- ")
+                print2("- ")
             } else {
-                print("= ")
+                print2("= ")
             }
-            print(this.bianGua.yaos[i].lq.getName())
-            print(this.bianGua.yaos[i].naZhi.getName())
+            print2(this.bianGua.yaos[i].lq.getName())
+            print2(this.bianGua.yaos[i].naZhi.getName())
             val xing3 = this.bianGua.yaos[i].naZhi.xing
-            print(xing3.toString())
+            print2(xing3.toString())
             if (this.bianGua.yaos[i].isShi) {
-                print(" 世")
+                print2(" 世")
             } else if (this.bianGua.yaos[i].isYing) {
-                print(" 应")
+                print2(" 应")
             }
-            println()
+            println2("")
 
             if (benGua.yaos[i].isChange) {
                 benGua.yaos[i].bianYao = this.bianGua.yaos[i]
@@ -116,23 +126,23 @@ class LiuYao {
         val isChong2 = this.checkLiuChong(this.bianGua)
         if (isHe1) {
             if (isHe2) {
-                println("六合化六合")
+                println2("六合化六合")
             } else if (isChong2) {
-                println("六合化六冲")
+                println2("六合化六冲")
             } else {
-                println("六合")
+                println2("六合")
             }
         }
         if (isChong1) {
             if (isHe2) {
-                println("六冲化六合")
+                println2("六冲化六合")
             } else if (isChong2) {
-                println("六冲化六冲")
+                println2("六冲化六冲")
             } else {
-                println("六冲")
+                println2("六冲")
             }
         }
-        return result
+        return output.toString()
     }
 
     fun getYaoName(yao: Yao): String {

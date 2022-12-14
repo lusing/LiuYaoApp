@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
 import com.github.lusing.liuyao.databinding.FragmentFirstBinding
 import com.github.lusing.qimen.DiZhi
@@ -37,6 +38,10 @@ class FirstFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
 
+        binding.buttonShow.setOnClickListener {
+            binding.guaList.visibility = View.VISIBLE
+        }
+
         binding.buttonCalc.setOnClickListener {
             val yue_gan = binding.spinnerYuegan.selectedItemId
             val yue_zhi = binding.spinnerYuezhi.selectedItemId
@@ -52,9 +57,9 @@ class FirstFragment : Fragment() {
 
             val yongshen = this.yongShenId(binding.yongshen.selectedItemId.toInt())
 
-            val yao = arrayOf(yao1, yao2, yao3, yao4, yao5, yao6)
+            val yaos = arrayOf(yao1, yao2, yao3, yao4, yao5, yao6)
 
-            val gua = Gua64(yao, rg = ri_gan.toInt())
+            val gua = Gua64(yaos, rg = ri_gan.toInt())
 
             val ly =
                 LiuYao(
@@ -65,7 +70,13 @@ class FirstFragment : Fragment() {
                 )
             val text = ly.paiPan()
 
+            binding.guaList.visibility = View.GONE
+
             binding.textviewFirst.text = text
+
+            setFragmentResult("gua", Bundle().apply {
+                putString("gua", text)
+            })
         };
     }
 
