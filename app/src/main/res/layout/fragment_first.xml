@@ -54,14 +54,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Spinner
-                android:id="@+id/spinner7"
+                android:id="@+id/spinner_rigan"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:entries="@array/tiangan" />
 
             <Spinner
-                android:id="@+id/spinner8"
+                android:id="@+id/spinner_rizhi"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_weight="1"

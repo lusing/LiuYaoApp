@@ -39,7 +39,9 @@ class FirstFragment : Fragment() {
         binding.buttonCalc.setOnClickListener {
             val yue_gan = binding.spinnerYuegan.selectedItem
             val yue_zhi = binding.spinnerYuezhi.selectedItem
-            binding.textviewFirst.text = "计算成功$yue_gan$yue_zhi"
+            val ri_gan = binding.spinnerRigan.selectedItem
+            val ri_zhi = binding.spinnerRizhi.selectedItem
+            binding.textviewFirst.text = "$yue_gan$yue_zhi 月$ri_gan$ri_zhi 日"
         };
     }
 
