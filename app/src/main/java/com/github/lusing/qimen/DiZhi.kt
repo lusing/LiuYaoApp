@@ -47,20 +47,44 @@ class DiZhi(idz: Int) {
             when (diZhi) {
                 ZI -> tgList = tgList.plusElement(TianGan(TianGan.GUI))
                 CHOU -> {
-                    tgList = tgList.plus(listOf(TianGan(TianGan.JI), TianGan(TianGan.GUI), TianGan(TianGan.XIN)))
+                    tgList = tgList.plus(
+                        listOf(
+                            TianGan(TianGan.JI),
+                            TianGan(TianGan.GUI),
+                            TianGan(TianGan.XIN)
+                        )
+                    )
                 }
 
                 YIN -> {
-                    tgList = tgList.plus(listOf(TianGan(TianGan.JIA), TianGan(TianGan.BING), TianGan(TianGan.WU)))
+                    tgList = tgList.plus(
+                        listOf(
+                            TianGan(TianGan.JIA),
+                            TianGan(TianGan.BING),
+                            TianGan(TianGan.WU)
+                        )
+                    )
                 }
 
                 MAO -> tgList = tgList.plusElement(TianGan(TianGan.YI))
                 CHEN -> {
-                    tgList = tgList.plus(listOf(TianGan(TianGan.WU), TianGan(TianGan.JI), TianGan(TianGan.GUI)))
+                    tgList = tgList.plus(
+                        listOf(
+                            TianGan(TianGan.WU),
+                            TianGan(TianGan.JI),
+                            TianGan(TianGan.GUI)
+                        )
+                    )
                 }
 
                 SI -> {
-                    tgList = tgList.plus(listOf(TianGan(TianGan.BING), TianGan(TianGan.WU), TianGan(TianGan.GENG)))
+                    tgList = tgList.plus(
+                        listOf(
+                            TianGan(TianGan.BING),
+                            TianGan(TianGan.WU),
+                            TianGan(TianGan.GENG)
+                        )
+                    )
                 }
 
                 WU -> {
@@ -68,17 +92,35 @@ class DiZhi(idz: Int) {
                 }
 
                 WEI -> {
-                    tgList = tgList.plus(listOf(TianGan(TianGan.JI), TianGan(TianGan.YI), TianGan(TianGan.DING)))
+                    tgList = tgList.plus(
+                        listOf(
+                            TianGan(TianGan.JI),
+                            TianGan(TianGan.YI),
+                            TianGan(TianGan.DING)
+                        )
+                    )
                 }
 
                 SHEN -> {
-                    tgList = tgList.plus(listOf(TianGan(TianGan.GENG), TianGan(TianGan.REN), TianGan(TianGan.WU)))
+                    tgList = tgList.plus(
+                        listOf(
+                            TianGan(TianGan.GENG),
+                            TianGan(TianGan.REN),
+                            TianGan(TianGan.WU)
+                        )
+                    )
                 }
 
                 YOU -> tgList = tgList.plusElement(TianGan(TianGan.XIN))
 
                 XU -> {
-                    tgList = tgList.plus(listOf(TianGan(TianGan.WU), TianGan(TianGan.XIN), TianGan(TianGan.DING)))
+                    tgList = tgList.plus(
+                        listOf(
+                            TianGan(TianGan.WU),
+                            TianGan(TianGan.XIN),
+                            TianGan(TianGan.DING)
+                        )
+                    )
                 }
 
                 HAI -> {
@@ -197,6 +239,25 @@ class DiZhi(idz: Int) {
          * 亥
          */
         const val HAI = 11
+
+        fun getDiZhi(dz: String): Int {
+            when (dz) {
+                "子" -> return ZI
+                "丑" -> return CHOU
+                "寅" -> return YIN
+                "卯" -> return MAO
+                "辰" -> return CHEN
+                "巳" -> return SI
+                "午" -> return WU
+                "未" -> return WEI
+                "申" -> return SHEN
+                "酉" -> return YOU
+                "戌" -> return XU
+                "亥" -> return HAI
+                else -> return -1
+            }
+        }
+
         const val sDiZhi = "子丑寅卯辰巳午未申酉戌亥"
         fun isHe(dz1: Int, dz2: Int): WuXing {
             var xing = -1

@@ -76,42 +76,42 @@
             android:text="@string/gua_xiang" />
 
         <Spinner
-            android:id="@+id/spinner6"
+            android:id="@+id/yao6"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:entries="@array/guas"
             android:prompt="@string/pos6" />
 
         <Spinner
-            android:id="@+id/spinner5"
+            android:id="@+id/yao5"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:entries="@array/guas"
             android:prompt="@string/pos5" />
 
         <Spinner
-            android:id="@+id/spinner4"
+            android:id="@+id/yao4"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:entries="@array/guas"
             android:prompt="@string/pos4" />
 
         <Spinner
-            android:id="@+id/spinner3"
+            android:id="@+id/yao3"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:entries="@array/guas"
             android:prompt="@string/pos3" />
 
         <Spinner
-            android:id="@+id/spinner2"
+            android:id="@+id/yao2"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:entries="@array/guas"
             android:prompt="@string/pos2" />
 
         <Spinner
-            android:id="@+id/spinner1"
+            android:id="@+id/yao1"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:entries="@array/guas"

@@ -7,11 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.github.lusing.liuyao.databinding.FragmentFirstBinding
+import com.github.lusing.qimen.DiZhi
 import com.github.lusing.qimen.TianGan
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
+
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
@@ -38,13 +37,19 @@ class FirstFragment : Fragment() {
         }
 
         binding.buttonCalc.setOnClickListener {
-            val yue_gan = binding.spinnerYuegan.selectedItem
-            val yue_zhi = binding.spinnerYuezhi.selectedItem
-            val ri_gan = binding.spinnerRigan.selectedItem
-            val ri_zhi = binding.spinnerRizhi.selectedItem
+            val yue_gan = binding.spinnerYuegan.selectedItemId
+            val yue_zhi = binding.spinnerYuezhi.selectedItemId
+            val ri_gan = binding.spinnerRigan.selectedItemId
+            val ri_zhi = binding.spinnerRizhi.selectedItemId
 
-            val yue_gan2 = TianGan.getTianGan(yue_gan.toString())
-            binding.textviewFirst.text = "$yue_gan$yue_zhi 月$ri_gan$ri_zhi 日 $yue_gan2"
+            val yao1 = binding.yao1.selectedItemId
+            val yao2 = binding.yao2.selectedItemId
+            val yao3 = binding.yao3.selectedItemId
+            val yao4 = binding.yao4.selectedItemId
+            val yao5 = binding.yao5.selectedItemId
+            val yao6 = binding.yao6.selectedItemId
+
+            binding.textviewFirst.text = "$yue_gan$yue_zhi 月$ri_gan$ri_zhi 日 $yao1 $yao2 $yao3"
         };
     }
 
