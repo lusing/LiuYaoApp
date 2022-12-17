@@ -566,4 +566,11 @@ class LiuYao {
         }
         return Pair(shengs, kes)
     }
+
+    companion object{
+        fun makeLiuYao(yaos: Array<Int>, yueJian: Int, riGan: Int, riJian: Int, yongShen: Int): LiuYao {
+            val gua = Gua64(yaos, riGan)
+            return LiuYao(gua = gua, yueJian = yueJian, riJian = riJian, yongShen = yongShen)
+        }
+    }
 }

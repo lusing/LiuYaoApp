@@ -1,6 +1,8 @@
 package com.github.lusing.liuyao
 
 import com.github.lusing.qimen.DiZhi
+import com.github.lusing.qimen.LiuQin
+import com.github.lusing.qimen.TianGan
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -23,7 +25,8 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun test(){
-
+    fun test() {
+        LiuYao.makeLiuYao(arrayOf(7, 7, 8, 8, 6, 8), DiZhi.ZI, TianGan.WU, DiZhi.XU, LiuQin.GUANGUI)
+            .paiPan()
     }
 }
