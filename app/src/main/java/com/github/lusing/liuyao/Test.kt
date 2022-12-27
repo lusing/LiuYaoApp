@@ -466,5 +466,8 @@ class Test {
 //        val gua_lg005 = Gua64(yao_lg005, TianGan.BING)
 //        val ly_lg005 = LiuYao(gua = gua_lg005, yueJian = DiZhi.WU, riJian = DiZhi.CHEN, yongShen = LiuQin.QICAI)
 //        ly_lg005.paiPan()
+
+        LiuYao.makeLiuYao(arrayOf(7, 7, 8, 8, 6, 8), DiZhi.ZI, TianGan.WU, DiZhi.XU, LiuQin.GUANGUI)
+            .paiPan()
     }
 }
