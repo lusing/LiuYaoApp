@@ -99,14 +99,7 @@ class BaZi {
                     }
                     print(" ${sui}岁 ")
                     print((dyfen * 0.6 + calcDaYun(year) * 0.4).toInt())
-                    print(" ")
-                    print(checkTaoHua(year))
-                    print(" ")
-                    print(checkZuBei(year))
-                    print(" ")
-                    print(checkFuMu(year))
-                    print(" ")
-                    println(checkZiSun(year))
+                    analyzeDaYun(year)
                     year = year.getNext()
                     sui++
                 }
@@ -125,19 +118,21 @@ class BaZi {
                     }
                     print(" ${sui}岁 ")
                     print((dyfen * 0.6 + calcDaYun(year) * 0.4).toInt())
-                    print(" ")
-                    print(checkTaoHua(year))
-                    print(" ")
-                    print(checkZuBei(year))
-                    print(" ")
-                    print(checkFuMu(year))
-                    print(" ")
-                    println(checkZiSun(year))
+                    analyzeDaYun(year)
                     year = year.getNext()
                     sui++
                 }
             }
         }
+    }
+
+    fun analyzeDaYun(year: GanZhi){
+        print(" ")
+        print(checkZuBei(year))
+        print(" ")
+        print(checkFuMu(year))
+        print(" ")
+        println(checkZiSun(year))
     }
 
     fun calcDaYun(gz: GanZhi): Int {
