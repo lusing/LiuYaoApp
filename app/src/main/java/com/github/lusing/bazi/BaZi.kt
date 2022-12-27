@@ -100,7 +100,13 @@ class BaZi {
                     print(" ${sui}岁 ")
                     print((dyfen * 0.6 + calcDaYun(year) * 0.4).toInt())
                     print(" ")
-                    println(checkTaoHua(year))
+                    print(checkTaoHua(year))
+                    print(" ")
+                    print(checkZuBei(year))
+                    print(" ")
+                    print(checkFuMu(year))
+                    print(" ")
+                    println(checkZiSun(year))
                     year = year.getNext()
                     sui++
                 }
@@ -120,7 +126,13 @@ class BaZi {
                     print(" ${sui}岁 ")
                     print((dyfen * 0.6 + calcDaYun(year) * 0.4).toInt())
                     print(" ")
-                    println(checkTaoHua(year))
+                    print(checkTaoHua(year))
+                    print(" ")
+                    print(checkZuBei(year))
+                    print(" ")
+                    print(checkFuMu(year))
+                    print(" ")
+                    println(checkZiSun(year))
                     year = year.getNext()
                     sui++
                 }
@@ -268,6 +280,54 @@ class BaZi {
         }
 
         return result
+    }
+
+    fun checkZuBei(gz: GanZhi): String {
+        val nianGan = this.nian.mTg
+        val nianZhi = this.nian.mDz
+        val ngan = gz.mTg
+        val nzhi = gz.mDz
+        var result = StringBuilder()
+
+        if (nianGan.isChong(ngan)){
+            result = result.append("易有祖父之丧")
+        }
+        if (nianZhi.isChong(nzhi)){
+            result = result.append("易有祖母之丧")
+        }
+        return result.toString()
+    }
+
+    fun checkFuMu(gz: GanZhi): String {
+        val yueGan = this.yue.mTg
+        val yueZhi = this.yue.mDz
+        val ngan = gz.mTg
+        val nzhi = gz.mDz
+        var result = StringBuilder()
+
+        if (yueGan.isChong(ngan)){
+            result = result.append(" 容易不利父母")
+        }
+        if (yueZhi.isChong(nzhi)){
+            result = result.append(" 容易不利父母")
+        }
+        return result.toString()
+    }
+
+    fun checkZiSun(gz: GanZhi): String {
+        val shiGan = this.shi.mTg
+        val shiZhi = this.shi.mDz
+        val ngan = gz.mTg
+        val nzhi = gz.mDz
+        var result = StringBuilder()
+
+        if (shiGan.isChong(ngan)){
+            result = result.append(" 容易不利子孙")
+        }
+        if (shiZhi.isChong(nzhi)){
+            result = result.append(" 容易不利子孙")
+        }
+        return result.toString()
     }
 
     private fun checkLingDiZhu() {
