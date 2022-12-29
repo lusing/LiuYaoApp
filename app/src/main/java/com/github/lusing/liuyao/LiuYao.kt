@@ -3,6 +3,7 @@ package com.github.lusing.liuyao
 import com.github.lusing.qimen.DiZhi
 import com.github.lusing.qimen.GanZhi
 import com.github.lusing.qimen.LiuQin
+import com.github.lusing.qimen.TianGan
 
 class LiuYao {
 
@@ -567,8 +568,25 @@ class LiuYao {
         return Pair(shengs, kes)
     }
 
-    companion object{
-        fun makeLiuYao(yaos: Array<Int>, yueJian: Int, riGan: Int, riJian: Int, yongShen: Int): LiuYao {
+    companion object {
+        fun makeLiuYao(
+            yaos: Array<Int>,
+            yueJian: Int,
+            riGan: Int,
+            riJian: Int,
+            yongShen: Int
+        ): LiuYao {
+            val gua = Gua64(yaos, riGan)
+            return LiuYao(gua = gua, yueJian = yueJian, riJian = riJian, yongShen = yongShen)
+        }
+
+        fun hanziLiuYao(yaos: Array<Int>, yueRi: String, yongShen: Int): LiuYao {
+            val yueJian = DiZhi.getDiZhi(yueRi.substring(0, 1))
+            val riGan = TianGan.getTianGan(yueRi.substring(2, 3))
+            val riJian = DiZhi.getDiZhi(yueRi.substring(3, 4))
+            println(yueJian)
+            println(riGan)
+            println(riJian)
             val gua = Gua64(yaos, riGan)
             return LiuYao(gua = gua, yueJian = yueJian, riJian = riJian, yongShen = yongShen)
         }
