@@ -25,6 +25,25 @@ class TestBaZi {
         bz.calcWang()
         bz.checkDaYun()
 
+        println("Version2:")
+
+        var bz1 =
+            BaZi(
+                TianGan.GENG,
+                DiZhi.SHEN,
+                TianGan.REN,
+                DiZhi.WU,
+                TianGan.REN,
+                DiZhi.XU,
+                TianGan.GENG,
+                DiZhi.ZI,
+                true,
+                6,
+                1980
+            )
+        bz1.calcWang()
+        bz1.checkDaYun()
+
         var bz2 =
             BaZi(
                 TianGan.YI,

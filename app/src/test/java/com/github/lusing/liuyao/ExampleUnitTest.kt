@@ -26,7 +26,10 @@ class ExampleUnitTest {
 
     @Test
     fun test() {
-        LiuYao.makeLiuYao(arrayOf(7, 7, 8, 8, 6, 8), DiZhi.ZI, TianGan.WU, DiZhi.XU, LiuQin.GUANGUI)
-            .paiPan()
+        //LiuYao.makeLiuYao(arrayOf(7, 7, 8, 8, 6, 8), DiZhi.ZI, TianGan.WU, DiZhi.XU, LiuQin.GUANGUI).paiPan()
+
+        // 黎光六冲化六合
+        // 酉月庚戌日，占何年能生儿子
+        LiuYao.makeLiuYao(arrayOf(7, 6, 8, 8, 7, 8), DiZhi.YOU, TianGan.GENG, DiZhi.XU, LiuQin.ZISUN).paiPan()
     }
 }
